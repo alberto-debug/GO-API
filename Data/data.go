@@ -13,5 +13,13 @@ func GetAllBooks() []models.Book {
 }
 
 func GetBookByID(id string) (models.Book, error) {
-	return nil, nil
+	for _, book := range books {
+
+		if book.ID == id {
+
+			return book, nil
+
+		}
+
+	}
 }
