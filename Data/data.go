@@ -1,8 +1,17 @@
 package data
 
-type Book struct {
-	ID     string `json:"id"`
-	Title  string `json:"title"`
-	Author string `json:"author"`
-	Year   int    `json:"year"`
+import models "github.com/alberto-debug/GO-API/Models"
+
+var books = []models.Book{
+
+	{ID: "1", Title: "Programming 1", Author: "Alberto junior", Year: 2025},
+	{ID: "2", Title: "Data Science", Author: "Araujo", Year: 2020},
+}
+
+func GetAllBooks() []models.Book {
+	return books
+}
+
+func GetBookByID(id string) (models.Book, error) {
+	return nil, nil
 }
