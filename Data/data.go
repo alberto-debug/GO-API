@@ -1,6 +1,10 @@
 package data
 
-import models "github.com/alberto-debug/GO-API/Models"
+import (
+	"errors"
+
+	models "github.com/alberto-debug/GO-API/Models"
+)
 
 var books = []models.Book{
 
@@ -22,4 +26,6 @@ func GetBookByID(id string) (models.Book, error) {
 		}
 
 	}
+
+	return models.Book{}, errors.New("Book not found with id " + id)
 }
